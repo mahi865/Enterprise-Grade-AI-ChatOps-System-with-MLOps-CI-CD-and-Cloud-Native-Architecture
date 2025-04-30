@@ -1,0 +1,28 @@
+# Core dependencies
+transformers  # Library for NLP models like BERT
+torch  # PyTorch for deep learning models
+scikit-learn  # For machine learning utilities
+numpy  # For numerical computations
+pandas  # For data manipulation
+flask
+
+# Additional dependencies for ChatOps and CI/CD
+requests  # For making HTTP requests
+gunicorn  # For deploying Flask applications
+docker  # For handling Docker containers programmatically
+
+# Monitoring and logging
+prometheus-client  # For monitoring metrics
+loguru  # For enhanced logging
+
+# Testing and development
+pytest  # For running tests
+black  # For code formatting
+flake8  # For linting
+
+# Cloud and MLOps tools
+boto3  # For AWS services
+mlflow  # For managing ML experiments and pipelines
+
+# Optional dependencies
+sentence-transformers  # For fine-tuned NLP models

@@ -103,7 +103,7 @@ chatops-ai/
 - DevOps- and MLOps-enabled end-to-end system
 
 ##WORK FLOW##
-
+###
 +---------------------+
 |    User Interface   |  (Slack, Teams, Web)
 +---------+-----------+
@@ -141,3 +141,5 @@ chatops-ai/
   Retraining Trigger (Evidently.ai + MLflow)
   |-----------------------------|
   Deployment (Docker + Kubernetes)
+
+  ###
