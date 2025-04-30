@@ -1,11 +1,11 @@
 # Project: Enterprise-Grade AI ChatOps System with MLOps, CI/CD, and Cloud-Native Architecture
 
-## 🌟 Goal
+##  Goal
 Develop a production-ready, scalable AI-powered **ChatOps platform** that integrates with enterprise tools, utilizes cutting-edge NLP models, and supports automated CI/CD, monitoring, and retraining pipelines.
 
 ---
 
-## 🚀 Technologies & Services Used
+##  Technologies & Services Used
 
 ### AI/ML Stack:
 - **LLMs**: OpenAI GPT-4 / Claude / Custom finetuned LLaMA
@@ -28,7 +28,7 @@ Develop a production-ready, scalable AI-powered **ChatOps platform** that integr
 
 ---
 
-## 🧠 Core Features
+##  Core Features
 
 - Real-time chatbot with GPT-4/Claude backend
 - Fine-tuned intent classification with Sentence-BERT
@@ -41,7 +41,7 @@ Develop a production-ready, scalable AI-powered **ChatOps platform** that integr
 
 ---
 
-## 🧱 System Architecture
+##  System Architecture
 
 1. **User** sends message via Slack / Web / Teams
 2. **API Gateway** routes to FastAPI (on EKS)
@@ -60,7 +60,7 @@ Develop a production-ready, scalable AI-powered **ChatOps platform** that integr
 
 ---
 
-## 📁 Sample Code Layout
+##  Sample Code Layout
 
 ```
 chatops-ai/
@@ -89,7 +89,7 @@ chatops-ai/
 
 ---
 
-## 🧪 Extras
+##  Extras
 - Load testing with Locust
 - Feature store via Feast
 - Secure endpoint (JWT/Auth0)
@@ -97,7 +97,47 @@ chatops-ai/
 
 ---
 
-## ✅ Output
+##  Output
 - Scalable LLM-powered chatbot deployed on cloud
 - CI/CD + retraining pipeline with full observability
 - DevOps- and MLOps-enabled end-to-end system
+
+##WORK FLOW##
+
++---------------------+
+|    User Interface   |  (Slack, Teams, Web)
++---------+-----------+
+          |
+          v
++---------------------+
+|  FastAPI (main.py)  |
++---------+-----------+
+          |
+          v
++---------------------+        +----------------+
+|    NLP Pipeline     |------->| Enterprise APIs|
+|    (pipeline.py)    |<-------| (JIRA, SFDC)   |
++---------+-----------+        +----------------+
+          |
+          v
++---------------------+
+|  Sentence-BERT      |  Intent Classification
+|  (bert_intent.py)   |
++---------------------+
+          |
+          v
++---------------------+        +----------------+
+|       GPT-4         |<------>|  Vector DB (RAG)|
+|    (gpt_wrapper.py) |        +----------------+
++---------------------+
+          |
+          v
++---------------------+
+|   Response to User  |
++---------------------+
+
+  Monitoring (Prometheus/Grafana)
+  |-----------------------------|
+  Retraining Trigger (Evidently.ai + MLflow)
+  |-----------------------------|
+  Deployment (Docker + Kubernetes)
