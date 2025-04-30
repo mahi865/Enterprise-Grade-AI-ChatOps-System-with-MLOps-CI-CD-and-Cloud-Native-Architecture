@@ -1,0 +1,14 @@
+stages:
+  - name: prepare-data
+    cmd: python scripts/prepare_data.py
+  - name: train-model
+    cmd: python scripts/train_model.py
+  - name: evaluate
+    cmd: python scripts/evaluate.py
+    deps:
+      - models/trained_model.pkl
+      - data/test_data.csv
+  - name: deploy
+    cmd: python scripts/deploy_model.py
+    deps:
+      - models/trained_model.pkl
