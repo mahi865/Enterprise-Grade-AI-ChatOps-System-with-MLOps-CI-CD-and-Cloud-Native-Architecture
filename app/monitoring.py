@@ -1,11 +1,12 @@
-from prometheus_client import start_http_server, Counter
+import logging
+import sentry_sdk
 
-# Prometheus metrics
-REQUEST_COUNT = Counter('request_count', 'Total number of requests')
-ERROR_COUNT = Counter('error_count', 'Total number of errors')
+sentry_sdk.init(dsn="your_sentry_dsn")
 
-def start_monitoring_server():
-    """
-    Start a Prometheus HTTP server for metrics.
-    """
-    start_http_server(8000)
+def log_request_metrics(message: str, intent: str):
+    logging.info(f"User Message: {message} | Intent: {intent}")
+    try:
+        # Placeholder for sending metrics to Prometheus, etc.
+        pass
+    except Exception as e:
+        sentry_sdk.capture_exception(e)

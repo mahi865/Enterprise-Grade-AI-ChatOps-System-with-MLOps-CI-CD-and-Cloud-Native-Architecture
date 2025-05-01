@@ -26,3 +26,11 @@ mlflow  # For managing ML experiments and pipelines
 
 # Optional dependencies
 sentence-transformers  # For fine-tuned NLP models
+transformers
+torch
+spacy
+sentence-transformers
+faiss-cpu
+fastapi
+uvicorn
+httpx

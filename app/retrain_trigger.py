@@ -1,15 +1,13 @@
-import time
-from evidently import Evidently
-from mlflow import log_metric
+import os
+from mlflow import start_run, log_metric, log_params
+from subprocess import run
 
-def check_data_drift():
-    """
-    Periodically check for data drift using Evidently.ai.
-    """
-    while True:
-        # Placeholder for data drift logic
-        drift_detected = False
-        if drift_detected:
-            log_metric("data_drift", 1)
-            # Trigger retraining pipeline
-        time.sleep(3600)  # Check every hour
+def retrain_model():
+    with start_run():
+        log_params({"trigger": "auto"})
+        try:
+            result = run(["bash", "retraining/retrain.sh"], check=True)
+            log_metric("status", 1)
+        except Exception as e:
+            log_metric("status", 0)
+            print(f"Retrain failed: {e}")

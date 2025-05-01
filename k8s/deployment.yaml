@@ -1,9 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: chatops-deployment
+  name: chatops-backend
+  labels:
+    app: chatops
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: chatops
@@ -14,13 +16,16 @@ spec:
     spec:
       containers:
       - name: chatops-container
-        image: your-docker-image:latest
+        image: your-dockerhub-username/chatops-backend:latest
         ports:
         - containerPort: 8000
         resources:
           requests:
-            memory: "256Mi"
-            cpu: "500m"
-          limits:
             memory: "512Mi"
-            cpu: "1"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        env:
+        - name: ENV
+          value: "production"

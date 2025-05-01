@@ -1,20 +1,12 @@
-from app.models.bert_intent import classify_intent
-from app.models.gpt_wrapper import generate_response
-from app.integrations.jira import handle_jira_integration
-from app.integrations.salesforce import handle_salesforce_integration
+from models.intent_classifier import classify_intent
+from models.entity_extractor import extract_entities
+from models.response_generator import generate_response
+from models.vector_search import semantic_search
 
-def process_message(user_message: str) -> str:
-    """
-    NLP + RAG + routing logic.
-    """
-    # Step 1: Intent classification
+def run_pipeline(user_message: str):
     intent = classify_intent(user_message)
-
-    # Step 2: Handle specific intents
-    if intent == "jira":
-        return handle_jira_integration(user_message)
-    elif intent == "salesforce":
-        return handle_salesforce_integration(user_message)
+    entities = extract_entities(user_message)
+    context = semantic_search(user_message)
+    response = generate_response(user_message, intent, context)
     
-    # Step 3: Default to GPT-4 for general queries
-    return generate_response(user_message)
+    return {"intent": intent, "entities": entities, "response": response}
