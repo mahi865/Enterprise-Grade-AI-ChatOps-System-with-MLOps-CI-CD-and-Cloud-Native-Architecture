@@ -143,3 +143,48 @@ chatops-ai/
   Deployment (Docker + Kubernetes)
 
   ###
+
+
+  # Core dependencies for AI/NLP
+transformers==4.28.1
+torch==2.0.1
+tensorflow==2.11.0
+scikit-learn==1.2.2
+numpy==1.24.3
+pandas==1.5.3
+
+# ChatOps and communication-related tools
+slack-sdk==3.21.3
+python-telegram-bot==20.3
+
+# CI/CD and cloud-native tools
+docker==6.0.1
+boto3==1.26.135  # For AWS SDK
+kubernetes==26.1.0  # For Kubernetes API
+gitpython==3.1.31  # For Git operations
+
+# Monitoring and logging
+prometheus-client==0.16.0
+loguru==0.7.0
+
+# Web framework (Optional, for serving APIs)
+fastapi==0.95.1
+uvicorn==0.22.0
+
+# Other utilities
+pyyaml==6.0
+requests==2.28.2
+tqdm==4.65.0
+regex==2023.5.2
+protobuf>=3.9.2,<3.20  # For TensorFlow compatibility
+
+# Development and testing
+pytest==7.3.1
+pytest-cov==4.0.0
+black==23.3.0
+flake8==6.0.0
+mypy==1.3.0
+
+# Ensure compatibility with Windows (if applicable)
+colorama==0.4.6
+sentry-sdk>=1.0.0
