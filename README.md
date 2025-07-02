@@ -139,8 +139,7 @@ chatops-ai/
 
   ###
 
-
-  # Core dependencies for AI/NLP
+# Core dependencies for AI/NLP
 transformers==4.28.1
 torch==2.0.1
 tensorflow==2.11.0
