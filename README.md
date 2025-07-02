@@ -60,7 +60,7 @@ Develop a production-ready, scalable AI-powered **ChatOps platform** that integr
 
 ---
 
-##  Sample Code Layout
+##  Code Layout
 
 ```
 chatops-ai/
@@ -85,17 +85,9 @@ chatops-ai/
 ├── .github/
 │   └── workflows/ci.yml      # GitHub Actions CI/CD
 └── README.md
-```
+``
 
----
 
-##  Extras
-- Load testing with Locust
-- Feature store via Feast
-- Secure endpoint (JWT/Auth0)
-- Custom feedback UI
-
----
 
 ##  Output
 - Scalable LLM-powered chatbot deployed on cloud
@@ -141,6 +133,9 @@ chatops-ai/
   Retraining Trigger (Evidently.ai + MLflow)
   |-----------------------------|
   Deployment (Docker + Kubernetes)
+
+![image](https://github.com/user-attachments/assets/f8f7722a-e1e6-48e5-aef9-8fcbe1dcf5ad)
+![image](https://github.com/user-attachments/assets/26732501-abcc-47e9-acfd-81e2cb43f4db)
 
   ###
 
