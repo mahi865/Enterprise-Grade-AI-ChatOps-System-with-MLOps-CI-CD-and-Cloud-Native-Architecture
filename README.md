@@ -1,7 +1,7 @@
 # Project: Enterprise-Grade AI ChatOps System with MLOps, CI/CD, and Cloud-Native Architecture
 
 ##  Goal
-Develop a production-ready, scalable AI-powered **ChatOps platform** that integrates with enterprise tools, utilizes cutting-edge NLP models, and supports automated CI/CD, monitoring, and retraining pipelines.
+Developed a production-ready, scalable AI-powered **ChatOps platform** that integrates with enterprise tools, utilizes cutting-edge NLP models, and supports automated CI/CD, monitoring, and retraining pipelines.
 
 ---
 
